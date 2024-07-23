@@ -4,44 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laaksha Bujja - Java Full Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #1f2937; /* Dark slate gray */
+            color: #ffffff;
+        }
+        .header a {
+            color: #60a5fa; /* Sky blue */
+        }
+        .header a:hover {
+            text-decoration: underline;
         }
         .section-title {
-            @apply text-3xl font-bold mb-6;
-        }
-        .sub-title {
-            @apply text-xl font-semibold mb-4;
+            @apply text-3xl font-bold mb-6 text-gray-900;
         }
         .card {
-            @apply bg-white shadow-lg rounded-lg p-6 mb-6;
+            @apply bg-white shadow-md rounded-lg p-6 mb-6;
+        }
+        .card ul {
+            @apply list-disc list-inside pl-5;
+        }
+        .card h3 {
+            @apply text-xl font-semibold mb-2;
+        }
+        .footer {
+            background-color: #1f2937; /* Dark slate gray */
+            color: #ffffff;
+        }
+        .contact-button {
+            @apply bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded;
+        }
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1.5rem;
+        }
+        .sidebar {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            padding: 1rem;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
-    <header class="bg-blue-600 text-white">
-        <div class="container mx-auto p-6">
+<body>
+    <header class="header py-6">
+        <div class="container mx-auto text-center">
             <h1 class="text-4xl font-bold">Laaksha Bujja</h1>
-            <p class="text-xl">Java Full Stack Developer</p>
-            <p>Phone: 214-901-7060 | Email: <a href="mailto:lakshmilaaksha37@gmail.com" class="text-yellow-300">lakshmilaaksha37@gmail.com</a></p>
+            <p class="text-xl mt-2">Java Full Stack Developer</p>
+            <p class="mt-2">Phone: 214-901-7060 | Email: <a href="mailto:lakshmilaaksha37@gmail.com">lakshmilaaksha37@gmail.com</a></p>
         </div>
     </header>
-    <main class="container mx-auto p-6">
-        <!-- Professional Summary -->
-        <section class="mb-12">
+    <main class="container mx-auto p-6 layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2 class="text-2xl font-bold mb-4">Navigation</h2>
+            <ul class="list-none">
+                <li><a href="#professional-summary" class="text-blue-600 hover:underline">Professional Summary</a></li>
+                <li><a href="#technical-skills" class="text-blue-600 hover:underline">Technical Skills</a></li>
+                <li><a href="#experience" class="text-blue-600 hover:underline">Professional Experience</a></li>
+                <li><a href="#contact" class="text-blue-600 hover:underline">Contact Me</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <section id="professional-summary" class="flex-1">
             <h2 class="section-title">Professional Summary</h2>
             <div class="card">
-                <p>6+ years of full stack development experience in all stages of life cycle referring to Design, Development, Implementation, and testing of web-based applications using JAVA/J2EE technologies. Proficient in UI design developed Front End using JSP, HTML5/CSS3, JavaScript, Bootstrap, Ajax, JQuery, AngularJS, NodeJS, and ReactJS.</p>
+                <p>6+ years of full stack development experience in all stages of the lifecycle including design, development, implementation, and testing of web-based applications using JAVA/J2EE technologies. Proficient in UI design with expertise in JSP, HTML5/CSS3, JavaScript, Bootstrap, Ajax, jQuery, AngularJS, NodeJS, and ReactJS.</p>
             </div>
         </section>
 
-        <!-- Technical Skills -->
-        <section class="mb-12">
+        <section id="technical-skills" class="flex-1">
             <h2 class="section-title">Technical Skills</h2>
             <div class="card">
-                <ul class="list-disc list-inside">
+                <ul>
                     <li><strong>Languages:</strong> Java, J2EE, JavaScript, CSS</li>
                     <li><strong>Frameworks:</strong> Spring, Hibernate, React, Angular, Node.js</li>
                     <li><strong>Web Technologies:</strong> HTML5, CSS3, JSP, Bootstrap, Ajax, jQuery</li>
@@ -52,12 +96,13 @@
             </div>
         </section>
 
-        <section>
+        <section id="experience" class="flex-1">
             <h2 class="section-title">Professional Experience</h2>
-            <div class="mb-6">
-                <h3 class="font-bold">Client: McDonald’s, Chicago, IL</h3>
+            
+            <div class="card">
+                <h3>Client: McDonald’s, Chicago, IL</h3>
                 <p><em>May 2023 - present</em></p>
-                <ul class="list-disc list-inside">
+                <ul>
                     <li>Developed scalable and high-performance web applications using Java, J2EE, and Spring framework including Spring Boot delivering robust solutions for clients in various industries.</li>
                     <li>Designed and implemented RESTful Web Services using Jersey facilitating seamless integration with front-end applications and third-party services.</li>
                     <li>Utilized JMS for messaging and asynchronous communication ensuring efficient data processing and system scalability.</li>
@@ -67,10 +112,10 @@
                 </ul>
             </div>
 
-            <div class="mb-6">
-                <h3 class="font-bold">Client: CioxHealth, Alpharetta, GA</h3>
+            <div class="card mt-6">
+                <h3>Client: CioxHealth, Alpharetta, GA</h3>
                 <p><em>Nov 2021 - Apr 2023</em></p>
-                <ul class="list-disc list-inside">
+                <ul>
                     <li>Developed complex enterprise applications using Java 8 and J2EE including Servlets, JSP, and EJB enhancing application scalability and performance.</li>
                     <li>Designed and implemented business logic using Enterprise JavaBeans (EJB) improving modularity and transactional support.</li>
                     <li>Implemented Spring MVC architecture to develop web applications providing a clean separation between the presentation layer and business logic.</li>
@@ -80,10 +125,10 @@
                 </ul>
             </div>
 
-            <div class="mb-6">
-                <h3 class="font-bold">Client: Office Depot, Boca Raton, FL</h3>
+            <div class="card mt-6">
+                <h3>Client: Office Depot, Boca Raton, FL</h3>
                 <p><em>Sep 2019 - Oct 2021</em></p>
-                <ul class="list-disc list-inside">
+                <ul>
                     <li>Developed and maintained web applications using Java, JSP, and Servlets delivering scalable and efficient solutions for client requirements.</li>
                     <li>Implemented core Java concepts such as multithreading, collections, and exception handling to build robust and high-performing applications.</li>
                     <li>Implemented Angular.js's two-way data binding to keep the UI in sync with the application state, reducing manual DOM manipulation.</li>
@@ -91,10 +136,11 @@
                     <li>Created backend services with Spring Boot ensuring rapid development and deployment of scalable microservices.</li>
                     <li>Deployed web applications using Azure App Service enabling scalable and high-performance hosting for the retail applications.</li>
                 </ul>
+            </div>
+        </section>
 
-    
         <!-- Contact Form -->
-        <section class="mb-12">
+        <section id="contact" class="flex-1">
             <h2 class="section-title">Contact Me</h2>
             <div class="card">
                 <form id="contact-form">
@@ -107,19 +153,6 @@
                         <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Your email">
                     </div>
                     <div class="mb-6">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
-                        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Your message"></textarea>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onclick="submitForm()">Send</button>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </main>
-    <footer class="bg-blue-600 text-white p-4 text-center">
-        <p>&copy; 2024 Laaksha Bujja. All rights reserved.</p>
-    </footer>
-    <script src="app.js"></script>
-</body>
-</html>
+                        <label class="block text-gray-700 text-sm
+
+
